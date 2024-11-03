@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edupay Smart Card System</title>
+    <style>
+        .btn-outline-danger:hover {
+            background-color: red;
+            color: white;
+        }
+        body {
+            background: url("{{ url_for('static', filename='images/college.jpg') }}") no-repeat center center fixed;
+            background-size: cover;
+            color: #ffffff;
+        }
+        main{
+            color:#ffffff;
+            font-weight: 900;
+            
+        }
+        section{
+            background-color: black;
+            opacity: 0.6;
+            padding: 20px 0;
+            border-radius: 3%;
+        }
+    </style>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="bg-success text-white py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <h1 class="h3">Edupay Smart Card</h1>
+            <nav>
+                <div>
+                    <a href="{{ url_for('student_dashboard') }}" class="btn btn-outline-danger mr-2">Student Dashboard</a>
+                    <a href="{{ url_for('admin_dashboard') }}" class="btn btn-outline-danger">Admin Dashboard</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main class="container text-center my-5">
+        <section class="mb-5">
+            <h2>Welcome to the Edupay Smart Card System</h2>
+            <p>The Edupay Smart Card System offers a streamlined, secure, and efficient way to manage student, admin, and staff access and data. Explore our features to see how it can benefit your institution.</p>
+        </section>
+        <section class="mb-5">
+            <h3>Key Features</h3>
+            <ul class="list-unstyled">
+                <li>Easy and Secure Login</li>
+                <li>Smart Card-based Access Management</li>
+                <li>Real-time Data Tracking</li>
+                <li>Customizable User Permissions</li>
+            </ul>
+        </section>
+        <section>
+            <h3>Login as:</h3>
+            <div class="d-flex justify-content-center">
+                <a href="/student-login" class="btn btn-success mx-2">Register</a>
+                <a href="/admin-login" class="btn btn-success mx-2">Login</a>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-dark text-white text-center py-4">
+        <div>Contact us at: <a href="mailto:info@edupaysmartcard.com" class="text-light">info@edupaysmartcard.com</a></div>
+        <div><a href="privacy.html" class="text-light">Privacy Policy</a> | <a href="terms.html" class="text-light">Terms of Service</a></div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

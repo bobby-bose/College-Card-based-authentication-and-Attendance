@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <!-- Main Content -->
+    <main class="container my-5">
+        <!-- User Management Section -->
+        <section id="user-management" class="mb-5">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">User Management</h3>
+                    <p>View and manage students/staff, update card balances, and suspend/activate cards.</p>
+                    <a href="{{ url_for('manage_users') }}" class="btn btn-primary">Manage Users</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Transaction Monitoring Section -->
+        <section id="transaction-monitoring" class="mb-5">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Transaction Monitoring</h3>
+                    <p>Access all transaction logs across the institution.</p>
+                    <a href="{{ url_for('transaction_logs') }}" class="btn btn-secondary">View Transaction Logs</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Attendance Monitoring Section -->
+        <section id="attendance-monitoring" class="mb-5">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Attendance Monitoring</h3>
+                    <p>View attendance logs by date and student.</p>
+                    <a href="{{ url_for('attendance_logs') }}" class="btn btn-secondary">View Attendance Logs</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- System Settings Section -->
+        <section id="system-settings" class="mb-5">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">System Settings</h3>
+                    <p>Configure fine amounts, set time limits for hostel attendance, etc.</p>
+                    <a href="{{ url_for('system_settings') }}" class="btn btn-warning">Configure Settings</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+ {% endblock %}

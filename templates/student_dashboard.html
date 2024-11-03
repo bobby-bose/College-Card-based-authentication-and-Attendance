@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block content %}
+    <!-- Main Content -->
+    <main class="container my-5">
+        <!-- Balance Display Section -->
+        <section id="balance" class="mb-5">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h2 class="card-title">Current Balance</h2>
+                    <p class="card-text display-4 text-success">₹500.00</p>
+                    <a class="btn btn-primary" href="{{ url_for('recharge') }}"
+                    >Recharge</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Transaction History Link Section -->
+        <section id="transaction-history" class="mb-5">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h3 class="card-title">Transaction History</h3>
+                    <p>View all your past transactions in detail.</p>
+                    <a href="{{ url_for('index') }}" class="btn btn-secondary">View Transaction History</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="attendance" class="mb-5">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h3 class="card-title">Attendance Status</h3>
+                    <p>Last Attendance: <span class="text-muted">2024-11-01 09:30 AM</span></p>
+                    <p class="text-danger">Late Attendance - Fine Applied</p>
+                </div>
+            </div>
+        </section>
+        <section id="notifications" class="mb-5">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h3 class="card-title">Notifications</h3>
+                    <div class="d-flex justify-content-center">
+                        <a href="#" class="btn btn-success">Success</a>
+                        <a href="#"" class="btn btn-danger">Error</a>
+                    </div>
+                    <p class="mt-3">Green indicates successful actions, and Red indicates errors.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Facial Recognition Section -->
+        <section id="facial-recognition" class="mb-5">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h3 class="card-title">Facial Recognition</h3>
+                    <p>Face verification will be available here.</p>
+                    <button class="btn btn-primary">Verify with Face</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+  {% endblock %}

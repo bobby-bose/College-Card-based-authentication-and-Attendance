@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facial Recognition Verification</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        #camera-feed {
+            width: 100%;
+            height: auto;
+            border: 2px solid #28a745;
+        }
+        .status-message {
+            font-size: 1.5rem;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-success text-white py-3">
+        <div class="container text-center">
+            <h1 class="h3">Facial Recognition Verification</h1>
+        </div>
+    </header>
+    <main class="container my-5 text-center">
+        <section>
+            <h3>Live Camera Feed</h3>
+            <video id="camera-feed" autoplay></video>
+        </section>
+        
+        <section class="status-message">
+            <p id="verification-status">Verification in progress...</p>
+        </section>
+        
+        <section>
+            <button id="retry-button" class="btn btn-danger mt-3" style="display:none;">Retry Verification</button>
+        </section>
+    </main>
+    
+    <footer class="bg-dark text-white text-center py-4">
+        <div>Contact us at: <a href="mailto:info@edupaysmartcard.com" class="text-light">info@edupaysmartcard.com</a></div>
+        <div><a href="privacy.html" class="text-light">Privacy Policy</a> | <a href="terms.html" class="text-light">Terms of Service</a></div>
+    </footer>
+
+    <script>
+        // Access the camera and display the video feed
+        const video = document.getElementById('camera-feed');
+
+        // Check for camera availability
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(function(stream) {
+                video.srcObject = stream;
+            })
+            .catch(function(err) {
+                console.error("Error accessing the camera: ", err);
+                document.getElementById('verification-status').innerText = "Camera not accessible.";
+            });
+
+        // Simulate verification process (for demonstration purposes)
+        setTimeout(() => {
+            // Simulate successful verification
+            const isVerified = true; // Change to false to simulate failure
+            
+            if (isVerified) {
+                document.getElementById('verification-status').innerText = "Verification Successful!";
+            } else {
+                document.getElementById('verification-status').innerText = "Verification Failed.";
+                document.getElementById('retry-button').style.display = "block";
+            }
+        }, 5000); // Simulate a verification time delay
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
